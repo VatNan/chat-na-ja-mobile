@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@expo/samples": "~1.0.4",
+    "@expo/vector-icons": "^5.0.0",
     "expo": "^18.0.4",
     "gun": "^0.8.0",
     "react": "16.0.0-alpha.12",
