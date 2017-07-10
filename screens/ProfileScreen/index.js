@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import  { 
     Text
 } from 'react-native';
-import { Entypo } from '@expo/vector-icons';
-import CustomScrollView from '../../components/CustomScrollView';
+
+//Component
+import BlockProfile from './BlockProfile';
 
 class ProfileScreen extends Component {
     static navigationOptions = {
@@ -35,10 +36,11 @@ class ProfileScreen extends Component {
             {name: 'purple'},
         ],
 
+        //initial
         profile: {
-            icon: 'network',
-            color: 'red',
-            name: 'Template'
+            icon: 'baidu',
+            color: 'green',
+            name: 'Kawo'
         }
     };
 
@@ -59,12 +61,10 @@ class ProfileScreen extends Component {
     }
 
     render() {
-        let { profile } = this.state;
+        let state = this.state;
 
         return (
-            <CustomScrollView>
-                <Entypo name={profile.icon} size={100} color={profile.color} />
-            </CustomScrollView>
+            <BlockProfile {...state}/>
         );
     }
 }
