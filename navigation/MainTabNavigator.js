@@ -11,17 +11,25 @@ import Colors from '../constants/Colors';
 import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+import ChatScreen from '../screens/ChatScreen';
+import ProfileScreen from '../screens/ProfileScreen';
 
 export default TabNavigator(
   {
     Home: {
       screen: HomeScreen,
     },
-    Links: {
-      screen: LinksScreen,
+    // Links: {
+    //   screen: LinksScreen,
+    // },
+    Profile: {
+      screen: ProfileScreen
     },
     Settings: {
       screen: SettingsScreen,
+    },
+    Chat: {
+      screen: ChatScreen,
     },
   },
   {
@@ -34,11 +42,18 @@ export default TabNavigator(
           case 'Home':
             iconName = 'home';
             break;
-          case 'Links':
-            iconName = 'book';
+          // case 'Links':
+          //   iconName = 'book';
+          //   break;
+          case 'Profile':
+            iconName = 'user';
             break;
           case 'Settings':
             iconName = 'cog';
+            break;
+          case 'Chat': 
+            iconName = 'comment';
+            break;
         }
         return (
           <FontAwesome
