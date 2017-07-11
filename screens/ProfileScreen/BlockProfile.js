@@ -8,6 +8,7 @@ import { Entypo } from '@expo/vector-icons';
 import CustomScrollView from '../../components/CustomScrollView';
 import TextTitie from '../../components/TextTitle';
 import CustomButton from '../../components/CustomButton';
+
 import ModalEditIcon from './ModalEditIcon';
 
 //style
@@ -15,7 +16,12 @@ import styles from './styles/BlockProfileStyle';
 
 
 function BlockProfile(props) {
-    let { profile, icons, colors } = props;
+    let { 
+        profile, 
+        icons, 
+        colors,
+        visibleModalIcons,
+        setVisibleModalIcons } = props;
 
     return (
         <CustomScrollView>
@@ -39,9 +45,7 @@ function BlockProfile(props) {
                         Name: 
                     </TextTitie> 
 
-                    <TextTitie 
-                        textColor="#337ab7" 
-                    > 
+                    <TextTitie textColor="#337ab7"> 
                         {" " + profile.name} 
                     </TextTitie> 
                 </View> 
@@ -50,6 +54,7 @@ function BlockProfile(props) {
                 {/*Edit Icon and Color*/} 
                 <View style={styles.blockEditButton}> 
                     <CustomButton 
+                        handler={() => { setVisibleModalIcons(true); }}
                         styleContainer={styles.btnEditIcon} 
                         textColor="white" 
                     > 
@@ -62,7 +67,7 @@ function BlockProfile(props) {
                         Edit Color
                     </CustomButton>
                     <CustomButton
-                        styleContainer={styles.btnEditIcon}
+                        styleContainer={styles.btnEditName}
                         textColor="white"
                     >
                         Edit Name
@@ -70,9 +75,14 @@ function BlockProfile(props) {
                 </View>
                 {/*Edit Icon and Color*/}
 
-                <ModalEditIcon>
+                {/*Modals*/}
+                    <ModalEditIcon 
+                        icons={icons} 
+                        visibleModalIcons={visibleModalIcons} 
+                        setVisibleModalIcons={setVisibleModalIcons} 
+                    />
+                {/*End Modals*/}
 
-                </ModalEditIcon>
             </View>
         </CustomScrollView>
     );

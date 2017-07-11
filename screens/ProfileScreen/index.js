@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import  { 
+import {
     Text
 } from 'react-native';
 
@@ -27,14 +27,19 @@ class ProfileScreen extends Component {
             { name: 'tripadvisor' },
         ],
         colors: [
-            {name: 'black'},
-            {name: 'blue'},
-            {name: 'red'},
-            {name: 'yello'},
-            {name: 'green'},
-            {name: 'orange'},
-            {name: 'purple'},
+            { name: 'black' },
+            { name: 'blue' },
+            { name: 'red' },
+            { name: 'yello' },
+            { name: 'green' },
+            { name: 'orange' },
+            { name: 'purple' },
         ],
+
+        //show modal
+        visibleModalIcons: false,
+        visibleModalColors: false,
+        visibleModalName: false,
 
         //initial
         profile: {
@@ -45,7 +50,16 @@ class ProfileScreen extends Component {
     };
 
     /**
-     * @description for setting icon for user's profile
+     * @description set status show or hide modal icons
+     */
+    setVisibleModalIcons = (visible) => {
+        this.setState({
+            visibleModalIcons: visible
+        });
+    }
+
+    /**
+     * @description setting icon for user's profile
      * @return void
     */
     selectIcon = () => {
@@ -53,7 +67,7 @@ class ProfileScreen extends Component {
     }
 
     /**
-     * @description for setting icon for user's profile
+     * @description setting icon for user's profile
      * @return void
     */
     selectColor = () => {
@@ -64,7 +78,10 @@ class ProfileScreen extends Component {
         let state = this.state;
 
         return (
-            <BlockProfile {...state}/>
+            <BlockProfile
+                 setVisibleModalIcons={this.setVisibleModalIcons}
+                {...state} 
+            />
         );
     }
 }

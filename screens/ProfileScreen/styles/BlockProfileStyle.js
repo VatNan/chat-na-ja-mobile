@@ -39,6 +39,13 @@ const styles = StyleSheet.create({
         width: 250,
         borderRadius: 50
     },
+
+    btnEditName: {
+        backgroundColor: '#337ab7',
+        marginVertical: 5,
+        width: 250,
+        borderRadius: 50
+    },
 });
 
 export default styles;
