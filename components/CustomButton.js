@@ -25,7 +25,10 @@ function CustomButton(props) {
 
     //TODO onpress
     return (
-        <TouchableOpacity style={[ styles.blockButton, styleContainer ]}>
+        <TouchableOpacity 
+            style={[ styles.blockButton, styleContainer ]}
+            onPress={handler}
+        >
             <TextTitle textColor={textColor} size={17}>
                 { children }
             </TextTitle>
