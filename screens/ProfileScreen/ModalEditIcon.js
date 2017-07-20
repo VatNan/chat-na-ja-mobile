@@ -13,6 +13,7 @@ import { Entypo } from '@expo/vector-icons';
 import BackgroundModal from '../../components/BackgroundModal';
 import EmptyFlexBox from '../../components/EmptyFlexBox';
 import CustomButton from '../../components/CustomButton';
+import TextTitle from '../../components/TextTitle';
 
 //stylesheet
 import styles from './styles/ModalEditIconStyle';
@@ -86,6 +87,9 @@ class ModalEditIcon extends Component {
                 <BackgroundModal />
                 <EmptyFlexBox flex={1} />
                 <View style={styles.blockBody}>
+                    <TextTitle>
+                        Edit Icon
+                    </TextTitle>
                     <ScrollView 
                         scrollEnabled={true} 
                         contentContainerStyle={styles.blockScrollIcons}
