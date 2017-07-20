@@ -30,7 +30,7 @@ class ProfileScreen extends Component {
             { name: 'black' },
             { name: 'blue' },
             { name: 'red' },
-            { name: 'yello' },
+            { name: 'yellow' },
             { name: 'green' },
             { name: 'orange' },
             { name: 'purple' },
@@ -59,6 +59,24 @@ class ProfileScreen extends Component {
     }
 
     /**
+     * @description set status show or hide modal icons
+     */
+    setVisibleModalColors = (visible) => {
+        this.setState({
+            visibleModalColors: visible
+        });
+    }
+
+    /**
+     * @description set status show or hide modal icons
+     */
+    setVisibleModalName = (visible) => {
+        this.setState({
+            visibleModalName: visible
+        });
+    }
+
+    /**
      * @description setting icon for user's profile
      * @return void
     */
@@ -79,7 +97,9 @@ class ProfileScreen extends Component {
 
         return (
             <BlockProfile
-                 setVisibleModalIcons={this.setVisibleModalIcons}
+                 setVisibleModalIcons={this.setVisibleModalIcons} 
+                 setVisibleModalColors={this.setVisibleModalColors} 
+                 setVisibleModalName={this.setVisibleModalName}
                 {...state} 
             />
         );

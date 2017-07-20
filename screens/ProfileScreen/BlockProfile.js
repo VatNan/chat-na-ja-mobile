@@ -10,7 +10,7 @@ import TextTitie from '../../components/TextTitle';
 import CustomButton from '../../components/CustomButton';
 
 import ModalEditIcon from './ModalEditIcon';
-
+import ModalEditColor from './ModalEditColor';
 //style
 import styles from './styles/BlockProfileStyle';
 
@@ -21,7 +21,10 @@ function BlockProfile(props) {
         icons, 
         colors,
         visibleModalIcons,
-        setVisibleModalIcons } = props;
+        visibleModalColors,
+        setVisibleModalIcons,
+        setVisibleModalColors 
+    } = props;
 
     return (
         <CustomScrollView>
@@ -61,6 +64,7 @@ function BlockProfile(props) {
                         Edit Icon 
                     </CustomButton> 
                     <CustomButton 
+                        handler={() => { setVisibleModalColors(true); }}
                         styleContainer={styles.btnEditColor} 
                         textColor="black" 
                     >
@@ -80,6 +84,12 @@ function BlockProfile(props) {
                         icons={icons} 
                         visibleModalIcons={visibleModalIcons} 
                         setVisibleModalIcons={setVisibleModalIcons} 
+                    />
+
+                    <ModalEditColor 
+                        colors={colors} 
+                        visibleModalColors={visibleModalColors} 
+                        setVisibleModalColors={setVisibleModalColors} 
                     />
                 {/*End Modals*/}
 
