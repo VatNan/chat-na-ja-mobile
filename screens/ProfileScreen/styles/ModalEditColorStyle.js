@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
 
-    blockScrollIcons: {
+    blockScrollColors: {
         flex: 1,
         marginTop: 5,
         flexDirection: 'row',
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
         // backgroundColor: 'red'
     },
 
-    blockIcon: {
+    blockColor: {
         // backgroundColor: 'gray',
         flex: 0,
         flexBasis: 50,
@@ -48,6 +48,11 @@ const styles = StyleSheet.create({
         height: 40,
         alignSelf: 'center',
         borderRadius: 50
+    },
+
+    color: {
+        width: 45,
+        height: 45
     }
 
 });
